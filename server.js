@@ -1,6 +1,7 @@
 const express = require("express");
 const { Pool  } = require ("pg");
 const app = express();
+const PORT = process.env || 2000;
 const pool = new Pool({
     connectionString:"postgres://asylabiw:nhXSh5K6Qq6I_xWnPDZ3I3-ajCfOqb3q@fanny.db.elephantsql.com/asylabiw"
 })
@@ -42,6 +43,6 @@ app.get("/users" , async (_, res) => {
 
 
 
-app.listen(2000, ()=> {
+app.listen(PORT, ()=> {
     console.log("server is runnning")
 })
